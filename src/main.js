@@ -11,7 +11,8 @@ const waitMsg = document.querySelector(".wait-msg");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  
+  const form = e.target;
+
   let searchName = input.value.trim();
   
   if (!searchName) {

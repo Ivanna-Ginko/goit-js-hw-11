@@ -50,12 +50,7 @@ export function ShowGLR (arrPict,tagGallery){
 
 
 
-    /*<div class="li-descr">Likes <span data="likes"> ${image.likes} </span></div>
-                <div class="li-descr">Views <span data="views"> ${image.views} </span> </div>
-                <div class="li-descr">Comments <span data="comments"> ${image.comments} </span> </div>
-                <div class="li-descr">Downloads <span data="downloads"> ${image.downloads} </span> </div>*/
 
-    //let hits = data.hits;
 
 
 
