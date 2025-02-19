@@ -2,10 +2,10 @@
 import SimpleLightbox from "simplelightbox";
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const lightbox = new SimpleLightbox('.gallery', " a", {
-  captionsData: 'alt',
-  captionDelay: 250,
-});
+
+let lightbox;
+
+
 
 export function ShowGLR (arrPict){
     
@@ -30,7 +30,12 @@ export function ShowGLR (arrPict){
     `).join("");
     
     gallery.insertAdjacentHTML("afterbegin", markup);
-    
+
+    lightbox = new SimpleLightbox(".gallery a", {
+      captionsData: 'alt',
+      captionDelay: 250,
+      close: 'true',
+    });
     lightbox.refresh();
     
 }
