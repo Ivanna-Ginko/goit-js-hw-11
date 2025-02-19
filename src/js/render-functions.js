@@ -2,14 +2,15 @@
 import SimpleLightbox from "simplelightbox";
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+const lightbox = new SimpleLightbox('.gallery', " a", {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 
-
-export function ShowGLR (arrPict,tagGallery){
+export function ShowGLR (arrPict){
     
-    const gallery = document.querySelector(tagGallery);
+    const gallery = document.querySelector(".gallery");
    
-
-
     const markup = arrPict.map((image)=>
         `<li class="gallery-item">
             <a class='gallery-link' href="${image.largeImageURL}">
@@ -21,10 +22,6 @@ export function ShowGLR (arrPict,tagGallery){
                     <tr><td>Likes</td><td>Views</td><td>Comment</td><td>Downloads</tr>
                     <tr><td>>${image.likes}</td><td>${image.views}</td><td>${image.comments}</td><td>${image.downloads}</tr>
                 </table>
-
-              
-          
-              
               
                 </div>
               </a>
@@ -32,16 +29,8 @@ export function ShowGLR (arrPict,tagGallery){
             
     `).join("");
     
-    
     gallery.insertAdjacentHTML("afterbegin", markup);
     
-
-
-
-    const lightbox = new SimpleLightbox(tagGallery+" a", {
-        captionsData: 'alt',
-        captionDelay: 250,
-    });
     lightbox.refresh();
     
 }
